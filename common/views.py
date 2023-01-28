@@ -4,8 +4,10 @@ from hms_admin.models import Staff,Doctor
 from .models import Patient
 from hms_admin.models import Department
 # Create your views here.
-def home(request):
-    return render(request,'common/homepage.html')
+
+
+def index(request):
+    return render(request,'common/index.html')
 
 def user_type(request):
     return render(request,'common/user_type.html')    
@@ -18,6 +20,7 @@ def contact(request):
 
 def dept(request):
     departments = Department.objects.all()
+     
     return render(request,'common/department.html',{'departments':departments,})
 
 def service(request):
@@ -39,14 +42,15 @@ def patient_registration(request):
         gender = request.POST['gender']
         email = request.POST['pat_email']
 
-        record_exist = Patient.objects.filter(email = email).exists()
+        record_exist = Patient.objects.filter(email = email).exists() # checking if the email entereb by the user exists
 
         if not record_exist :
+            # if user uploaded the picture, then the user picture is upload, other wise a dummy image is saved which is saved in static folder 
             if 'pic' in request.FILES : # here pic is the name attribute of fileuploader
                 pic = request.FILES['pic']
         
                 patient_record = Patient( patient_name = name ,email = email, address = address , age = age , blood_grp = blood_group , 
-                phone = contact , dob = dob , gender = gender , pic = pic )
+                phone = contact , dob = dob , gender = gender , pic = pic)
                 
             else :
 
@@ -62,7 +66,8 @@ def patient_registration(request):
     return render(request,'common/patient_register.html', {'success_msg' : success_msg, 'error_msg' : error_msg})
 
 def login(request):
-    user_type = request.GET['user']
+
+    user_type = request.GET['user'] # getting query string value from url
     msg = ''
     
     # if 'patient' in request.session :
@@ -82,8 +87,14 @@ def login(request):
              
             try :
                 staff = Staff.objects.get(mail = username, password = password)
-                request.session['staff'] = staff.id
-                return redirect('staff:staff_home')
+
+                if staff.status == 'active':
+
+                    request.session['staff'] = staff.id # setting session for staff
+                    request.session['pic'] = staff.pic.url
+                    return redirect('staff:staff_home')
+                else:
+                    msg = 'Account Inaactive'
             except :
                 msg = 'Invalid Username Or Password'
 
@@ -101,14 +112,9 @@ def login(request):
             try :
                 patient = Patient.objects.get(email = username, phone = password)
                 request.session['patient'] = patient.id
+                request.session['pic'] = patient.pic.url
                 return redirect('patient:home')
-            #     if request.session['log'] == True :
-            #         return redirect('patient:appointment_1')
-
-            #     request.session['log'] = False
-            #     return redirect('patient:home')
-            # except Exception as e :
-            #     print(e)
+      
             except:
                 msg = 'Invalid Username Or Password'
 

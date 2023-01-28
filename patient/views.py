@@ -10,15 +10,21 @@ from .services import get_slots,create_slots,create_bookings,generate_slot
 from django.http import JsonResponse,HttpResponse
 # Create your views here.
 def home(request):
-    patient = Patient.objects.filter(id = request.session['patient']).values('patient_name')
-    pat_name = patient[0]['patient_name']
+
+    if 'log' in request.session:
+        del request.session['log']
+        return redirect('patient:appointment_1')
+
+    patient = Patient.objects.filter(id = request.session['patient']).values('patient_name') # fetching patient name
+    patient_name = patient[0]['patient_name']
+    
     booking_count = Booking.objects.filter(patient = request.session['patient']).count()
     cancelled_count = Booking.objects.filter(patient = request.session['patient'], status = 'cancelled').count()
     
     last_booking = Booking.objects.filter(patient = request.session['patient']).values('booking_date','time','reference_no','status')
     
     context = {
-        'pat_name' : pat_name,
+        'patient_name' : patient_name,
         'last_booking' : last_booking,
         'booking' :  booking_count,
         'cancelled_count':cancelled_count
@@ -241,7 +247,7 @@ def logout(request):
     if 'patient' in request.session:
         del request.session['patient']
         request.session.flush()
-        return redirect('common:com-home')
+        return redirect('common:index')
 
 
 def cancel_booking(request,id):

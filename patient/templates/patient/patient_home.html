@@ -1,4 +1,4 @@
-{% extends 'patient/patient_base.html' %} 
+{% extends 'patient/patient_master.html' %} 
 {% load static %} 
 
 {% block header %}
@@ -18,7 +18,7 @@
 
 <h1 style="color: rgb(6, 6, 165); margin-top: 50px; text-align: center;"
   class="mb-4">
-  Welcome  {{ pat_name | title }}
+  Welcome  {{ patient_name | title }}
 </h1>
 
   

@@ -66,14 +66,11 @@ def add_doctor(request):
             new_doctor = Doctor(doctor_name = name, doctor_email = email, doctor_contact = contact,department_id = department,
             qualification = qualification, experience = experience, fee = fee, pic = pic, username = user_name, password = password)
             new_doctor.save()
-            success_msg = 'Your Email is verified'
+            success_msg = 'Doctor Added Succesfully'
         else:
-            error_msg = 'Email is Exist'    
+            error_msg = 'Email Exists'    
 
 
-        # doctor = Doctor(doctor_name = name, doctor_email = email, doctor_contact = contact,department_id = department,
-        # qualification = qualification, experience = experience, fee = fee, pic = pic, username = user_name, password = password)
-        # doctor.save()
          
 
         # send_mail(
@@ -160,12 +157,12 @@ def add_staff(request):
         phone = request.POST['number']
         password = request.POST['pass']
         pic = request.FILES['pic']
-
+        # email_exist =  Staff.objects.filter(mail = mail, status = 'active').exists()
         staff = Staff(name = name, mail = mail,address = address, phone = phone, password = password, pic = pic)
         staff.save()
     return render(request,'hms_admin/add_staff.html')
 
 def view_staff(request):
-    staff = Staff.objects.all()
+    staff = Staff.objects.filter(status = 'active')
     return render(request,'hms_admin/view_staff.html',{'staff':staff})
 

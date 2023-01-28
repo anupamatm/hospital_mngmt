@@ -1,260 +1,470 @@
-{% load static %}
-<!-- All other pages extends this page -->
+{% extends 'common/common_master.html' %} 
+{% load static %} 
 
-<!DOCTYPE html>
-<html lang="zxx">
+{% block header %}
+<style>
 
-<head>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<meta name="description" content="Orbitor,business,company,agency,modern,bootstrap4,tech,software">
-	<meta name="author" content="themefisher.com">
+</style>
 
-	<title>Heavan Care Hospital Master Page</title>
-
-	<!-- Favicon -->
-	<link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico" />
-
-	<!-- bootstrap.min css -->
-	<link rel="stylesheet" href="{% static 'plugins/bootstrap/css/bootstrap.min.css' %}">
-	<!-- Icon Font Css -->
-	<link rel="stylesheet" href="{% static 'plugins/icofont/icofont.min.css' %}">
-	<!-- Slick Slider  CSS -->
-	<link rel="stylesheet" href=" {% static 'plugins/slick-carousel/slick/slick.css' %}">
-	<link rel="stylesheet" href=" {% static 'plugins/slick-carousel/slick/slick-theme.css' %}">
-
-	<!-- Main Stylesheet -->
-	<link rel="stylesheet" href=" {% static 'css/style.css' %}">
-
-	<!-- custom style  -->
-	<!-- <link rel="stylesheet" href="static/css/pt_register.css"> -->
-
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-  
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
-	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
-
-	<script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+{% endblock %} 
 
 
-	{% block header %}
-	<!-- Add style tag for individual pages  -->
-	{% endblock %}
-
-</head>
-
-<body id="top">
-
-	<header>
-		<div class="header-top-bar">
-			<div class="container">
-				<div class="row align-items-center">
-					<div class="col-lg-6">
-						<ul class="top-bar-info list-inline-item pl-0 mb-0">
-							<li class="list-inline-item"><a href="mailto:support@gmail.com"><i
-										class="icofont-support-faq mr-2"></i>support@heavancare.com</a></li>
-							<li class="list-inline-item"><i class="icofont-location-pin mr-2"></i>Address Ta-134/A,
-								Calicut,India </li>
-						</ul>
-					</div>
-					<div class="col-lg-6">
-						<div class="text-lg-right top-right-bar mt-2 mt-lg-0">
-							<a href="tel:+23-345-67890">
-								<span>Call Now : </span>
-								<span class="h4">823-4565-13456</span>
-							</a>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>	
-
-		<nav class="navbar navbar-expand-lg navigation" id="navbar">
-			<div class="container">
-				<a class="navbar-brand" href="{% url 'common:com-home' %}">
-					<img src="{% static 'images/heavan.png' %}" alt="" class="img-fluid">
-				</a>
-		
-				<button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarmain"
-					aria-controls="navbarmain" aria-expanded="false" aria-label="Toggle navigation">
-					<span class="icofont-navigation-menu"></span>
-				</button>
-		
-				<div class="collapse navbar-collapse" id="navbarmain">
-					<ul class="navbar-nav ml-auto">
-						<li class="nav-item active">
-							<a class="nav-link" href="{% url 'common:com-home' %}">Home</a>
-						</li>
-						<li class="nav-item"><a class="nav-link" href="{% url 'common:about' %}">About</a></li>
-						<li class="nav-item"><a class="nav-link" href="{% url 'common:services' %}">Services</a></li>
-		
-						<li class="nav-item active">
-							<a class="nav-link" href="{% url 'common:depts' %}">
-                                Departments
-                            </a>
-						</li>					
-		
-						<li class="nav-item"><a class="nav-link" href="{% url 'common:contact' %}">Contact</a></li>
-							
-						<li class="nav-item"><a class="nav-link" href="{% url 'common:user_type' %}">Login</a></li>	
-		
-					</ul>
-				</div>
-			</div>
-		</nav>
-		</header>
-		
-		
-	{% block content %}
-
-	
-
-	{% endblock %}
+{% block content %}
 
 
-	<!-- footer Start -->
-	<footer class="footer section gray-bg">
-		<div class="container">
-			<div class="row">
+<!-- Slider Start -->
+<section class="banner">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-6 col-md-12 col-xl-7">
+				<div class="block">
+					<div class="divider mb-3"></div>
+					<span class="text-uppercase text-sm letter-spacing">Total Health care
+						solution</span>
+					<h1 class="mb-3 mt-3">Your most trusted health partner</h1>
 
-				<!-- <div class="col-lg-4 mr-auto col-sm-6">
-					<div class="widget mb-5 mb-lg-0">
-						<div class="logo mb-4">
-							<img src="{% static 'images/logo.png' %}" alt="" class="img-fluid">
-						</div>
-						<p>Tempora dolorem voluptatum nam vero assumenda voluptate, facilis ad eos obcaecati tenetur
-							veritatis eveniet distinctio possimus.</p>
-
-						<ul class="list-inline footer-socials mt-4">
-							<li class="list-inline-item"><a href="https://www.facebook.com/themefisher"><i
-										class="icofont-facebook"></i></a></li>
-							<li class="list-inline-item"><a href="https://twitter.com/themefisher"><i
-										class="icofont-twitter"></i></a></li>
-							<li class="list-inline-item"><a href="https://www.pinterest.com/themefisher/"><i
-										class="icofont-linkedin"></i></a></li>
-						</ul>
-					</div>
-				</div> -->
-
-				<div class="col-lg-4 col-md-6 col-sm-6">
-					<div class="widget mb-5 mb-lg-0">
-						<h4 class="text-capitalize mb-3">Department</h4>
-						<div class="divider mb-4"></div>
-
-						<ul class="list-unstyled footer-menu lh-35">
-							<li><a href="#">Surgery </a></li>
-							<li><a href="#">Women's Health</a></li>
-							<li><a href="#">Radiology</a></li>
-							<li><a href="#">Cardiac</a></li>
-							<li><a href="#">Medicine</a></li>
-						</ul>
-					</div>
-				</div>
-
-				<div class="col-lg-4 col-md-6 col-sm-6">
-					<div class="widget mb-5 mb-lg-0">
-						<h4 class="text-capitalize mb-3">Support</h4>
-						<div class="divider mb-4"></div>
-
-						<ul class="list-unstyled footer-menu lh-35">
-							<li><a href="#">Terms & Conditions</a></li>
-							<li><a href="#">Privacy Policy</a></li>
-							<li><a href="#">Company Support </a></li>
-							<li><a href="#">FAQuestions</a></li>
-							<li><a href="#">Company Licence</a></li>
-						</ul>
-					</div>
-				</div>
-
-				<div class="col-lg-4 col-md-6 col-sm-6">
-					<div class="widget widget-contact mb-5 mb-lg-0">
-						<h4 class="text-capitalize mb-3">Get in Touch</h4>
-						<div class="divider mb-4"></div>
-
-						<div class="footer-contact-block mb-4">
-							<div class="icon d-flex align-items-center">
-								<i class="icofont-email mr-3"></i>
-								<span class="h6 mb-0">Support Available for 24/7</span>
-							</div>
-							<h4 class="mt-2"><a href="tel:+23-345-67890">Support@email.com</a></h4>
-						</div>
-
-						<div class="footer-contact-block">
-							<div class="icon d-flex align-items-center">
-								<i class="icofont-support mr-3"></i>
-								<span class="h6 mb-0">Mon to Fri : 08:30 - 18:00</span>
-							</div>
-							<h4 class="mt-2"><a href="tel:+23-345-67890">+23-456-6588</a></h4>
-						</div>
-						<ul class="list-inline footer-socials mt-4">
-							<li class="list-inline-item"><a href="https://www.facebook.com/themefisher"><i
-										class="icofont-facebook"></i></a></li>
-							<li class="list-inline-item"><a href="https://twitter.com/themefisher"><i
-										class="icofont-twitter"></i></a></li>
-							<li class="list-inline-item"><a href="https://www.pinterest.com/themefisher/"><i
-										class="icofont-linkedin"></i></a></li>
-						</ul>
-					</div>
-				</div>
-			</div>
-
-			<div class="footer-btm py-4 mt-5">
-				<div class="row align-items-center justify-content-between">
-					<div class="col-lg-6">
-						<div class="copyright">
-							&copy; Copyright Reserved to <span class="text-color">Novena</span> by <a
-								href="https://themefisher.com/" target="_blank">Themefisher</a>
-						</div>
-					</div>
-					<div class="col-lg-6">
-						<div class="subscribe-form text-lg-right mt-5 mt-lg-0">
-							<form action="#" class="subscribe">
-								<input type="text" class="form-control" placeholder="Your Email address">
-								<a href="#" class="btn btn-main-2 btn-round-full">Subscribe</a>
-							</form>
-						</div>
-					</div>
-				</div>
-
-				<div class="row">
-					<div class="col-lg-4">
-						<a class="backtop js-scroll-trigger" href="#top">
-							<i class="icofont-long-arrow-up"></i>
-						</a>
+					<p class="mb-4 pr-5">
+						A the well-acclaimed health enterprise and one of the leading healthcare systems in Malabar,
+						assures comprehensive health care services with a global standard.
+					</p>
+					<div class="btn-container">
+						<a href="{% url 'patient:appointment_1' %}" target="_blank"
+							class="btn btn-main-2 btn-icon btn-round-full">Make appoinment <i
+								class="icofont-simple-right ml-2"></i></a>
 					</div>
 				</div>
 			</div>
 		</div>
-	</footer>
+	</div>
+</section>
+<section class="features">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12">
+				<div class="feature-block d-lg-flex">
+					<div class="feature-item mb-5 mb-lg-0">
+						<div class="feature-icon mb-4">
+							<i class="icofont-surgeon-alt"></i>
+						</div>
+						<span>24 Hours Service</span>
+						<h4 class="mb-3">Online Appoinment</h4>
+						<p class="mb-4">
+							Get ALl time support for emergency.We have introduced the
+							principle of family medicine.
+						</p>
+						<a href="{% url 'patient:appointment_1' %}" class="btn btn-main btn-round-full">Make an appoinment</a>
+					</div>
+
+					<div class="feature-item mb-5 mb-lg-0">
+						<div class="feature-icon mb-4">
+							<i class="icofont-ui-clock"></i>
+						</div>
+						<span>Timing schedule</span>
+						<h4 class="mb-3">Working Hours</h4>
+						<ul class="w-hours list-unstyled">
+							<li class="d-flex justify-content-between">
+								Sun - Wed : <span>8:00 - 17:00</span>
+							</li>
+							<li class="d-flex justify-content-between">
+								Thu - Fri : <span>9:00 - 17:00</span>
+							</li>
+							<li class="d-flex justify-content-between">
+								Sat - sun : <span>10:00 - 17:00</span>
+							</li>
+						</ul>
+					</div>
+
+					<div class="feature-item mb-5 mb-lg-0">
+						<div class="feature-icon mb-4">
+							<i class="icofont-support"></i>
+						</div>
+						<span>Emegency Cases</span>
+						<h4 class="mb-3">1-800-700-6200</h4>
+						<p>
+							Get ALl time support for emergency.We have introduced the
+							principle of family medicine.Get Conneted with us for any urgency
+							.
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="section about">
+	<div class="container">
+		<div class="row align-items-center">
+			<div class="col-lg-4 col-sm-6">
+				<div class="about-img">
+					<img src="{% static 'images/about/img-1.jpg' %}" alt="" class="img-fluid" />
+					<img src="{% static 'images/about/img-2.jpg' %}" alt="" class="img-fluid mt-4" />
+				</div>
+			</div>
+			<div class="col-lg-4 col-sm-6">
+				<div class="about-img mt-4 mt-lg-0">
+					<img src="{% static 'images/about/img-3.jpg' %}" alt="" class="img-fluid" />
+				</div>
+			</div>
+			<div class="col-lg-4">
+				<div class="about-content pl-4 mt-4 mt-lg-0">
+					<h2 class="title-color">Personal care <br />& healthy living</h2>
+					<p class="mt-4 mb-5">
+						Personalized Medical Assistant for all your healthcare needs.
+						Book instant appointment, pay securely, eConsult with our doctors and save all your health records at one place are some of the benefits of OneHeaven App.
+						 It is everything you need, to manage your family Health. 
+					</p>
+
+					<a href="{% url 'common:services' %}" class="btn btn-main-2 btn-round-full btn-icon">Services<i
+							class="icofont-simple-right ml-3"></i></a>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="cta-section">
+	<div class="container">
+		<div class="cta position-relative">
+			<div class="row">
+				<div class="col-lg-3 col-md-6 col-sm-6">
+					<div class="counter-stat">
+						<i class="icofont-doctor"></i>
+						<span class="h3">58</span>k
+						<p>Happy People</p>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-6 col-sm-6">
+					<div class="counter-stat">
+						<i class="icofont-flag"></i>
+						<span class="h3">700</span>+
+						<p>Surgery Comepleted</p>
+					</div>
+				</div>
+
+				<div class="col-lg-3 col-md-6 col-sm-6">
+					<div class="counter-stat">
+						<i class="icofont-badge"></i>
+						<span class="h3">40</span>+
+						<p>Expert Doctors</p>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-6 col-sm-6">
+					<div class="counter-stat">
+						<i class="icofont-globe"></i>
+						<span class="h3">20</span>
+						<p>Worldwide Branch</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<section class="section service gray-bg">
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="col-lg-7 text-center">
+				<div class="section-title">
+					<h2>Award winning patient care</h2>
+					<div class="divider mx-auto my-4"></div>
+					<p>
+						Our awards and accreditations are a testament to our global standards of medical care to our patients.
+					</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-lg-4 col-md-6 col-sm-6">
+				<div class="service-item mb-4">
+					<div class="icon d-flex align-items-center">
+						<i class="icofont-laboratory text-lg"></i>
+						<h4 class="mt-3 mb-3">Laboratory services</h4>
+					</div>
+
+					<div class="content">
+						<p class="mb-4">
+							Heavan Hospital possesses one of the best laboratory services and facilities in the country with state-of-the art equipments and analysers ensuring safety and accuracy.
+						</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-lg-4 col-md-6 col-sm-6">
+				<div class="service-item mb-4">
+					<div class="icon d-flex align-items-center">
+						<i class="icofont-heart-beat-alt text-lg"></i>
+						<h4 class="mt-3 mb-3">Heart Disease</h4>
+					</div>
+					<div class="content">
+						<p class="mb-4">
+							When you have heart disease, you start to be tired of everything. It’s like getting older. You become more white, and after that, grey. You have no feeling for anything.
+						</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-lg-4 col-md-6 col-sm-6">
+				<div class="service-item mb-4">
+					<div class="icon d-flex align-items-center">
+						<i class="icofont-tooth text-lg"></i>
+						<h4 class="mt-3 mb-3">Dental Care</h4>
+					</div>
+					<div class="content">
+						<p class="mb-4">
+							The toothbrush doesn’t remove six months of tartar 30 minutes before your dental appointment!
+						</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-lg-4 col-md-6 col-sm-6">
+				<div class="service-item mb-4">
+					<div class="icon d-flex align-items-center">
+						<i class="icofont-crutch text-lg"></i>
+						<h4 class="mt-3 mb-3">Body Surgery</h4>
+					</div>
+
+					<div class="content">
+						<p class="mb-4">
+							Everyone has that friend who’s every day, like, ‘I hate my nose, I hate my nose, I hate my nose.’
+							 You either need to come to peace with it and be like, alright, I hate it, but it’s part of me – or change it.
+							 So I’m not against plastic surgery, I’m against plastic surgery when it doesn’t really need to be done
+						</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-lg-4 col-md-6 col-sm-6">
+				<div class="service-item mb-4">
+					<div class="icon d-flex align-items-center">
+						<i class="icofont-brain-alt text-lg"></i>
+						<h4 class="mt-3 mb-3">Neurology Sargery</h4>
+					</div>
+					<div class="content">
+						<p class="mb-4">
+							As a neurosurgeon you have to come to terms with ruining people's lives and with making mistakes.
+							 But one still feels terrible about it and how much it will cost.
+						</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-lg-4 col-md-6 col-sm-6">
+				<div class="service-item mb-4">
+					<div class="icon d-flex align-items-center">
+						<i class="icofont-dna-alt-1 text-lg"></i>
+						<h4 class="mt-3 mb-3">Gynecology</h4>
+					</div>
+					<div class="content">
+						<p class="mb-4">
+							Loving everything about yourself - even the 'unacceptable' - is an act of personal power.
+							 It is the beginning of healing.
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="section testimonial-2 gray-bg">
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="col-lg-7">
+				<div class="section-title text-center">
+					<h2>We served over 5000+ Patients</h2>
+					<div class="divider mx-auto my-4"></div>
+					<p>
+						Heavan Hospital ensures to provide the highest quality of care and a transformative experience for all your
+						healthcare needs. Our multi-specialty hospital equipped with specialised doctors,
+						and world-class technology, bring global standards of medical care to our patients.
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<div id="carouselExampleDark" class="carousel carousel-dark slide text-center" data-bs-ride="carousel">
+		<div class="carousel-indicators">
+		  <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active mt-3 mb-1" aria-current="true" aria-label="Slide 1"></button>
+		  <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" class="mt-3 mb-1" aria-label="Slide 2"></button>
+		  <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" class="mt-3 mb-1" aria-label="Slide 3"></button>
+		  <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="3" class="mt-3 mb-1" aria-label="Slide 4"></button>
+		  <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="4" class="mt-3 mb-1" aria-label="Slide 5"></button>
+		</div>
+		<div class="carousel-inner">
+			<div class="carousel-item active">
+				<p class="lead font-italic mx-4 mx-md-5">
+					"They provide great service facilty consectetur adipisicing elit.
+					Itaque rem, praesentium, iure, ipsum magnam deleniti a vel eos
+					adipisci suscipit fugit placeat"
+				</p>
+				<div class="mt-5 mb-4">
+					<img src="{% static 'images/team/test-thumb1.jpg' %}"
+						class="rounded-circle img-fluid shadow-1-strong" alt="smaple image" width="100"
+						height="100" />
+				</div>
+				<h4>Amazing service!</h4>
+				<p class="text-muted mb-0">- John Partho</p>
+			</div>
+
+		  	<div class="carousel-item">
+							<p class="lead font-italic mx-4 mx-md-5">
+								We have some of the best specialty doctors from around the world,
+								they bring years of experience and offer evidence based treatment to ensure the best care for you.
+							</p>
+							<div class="mt-5 mb-4">
+								<img src="{% static 'images/team/test-thumb2.jpg' %}"
+									class="rounded-circle img-fluid shadow-1-strong" alt="smaple image" width="100"
+									height="100" />
+							</div>
+							<h4>Expert doctors!</h4>
+							<p class="text-muted mb-0">- Mullar Sarth</p>
+						</div>
+
+		  	<div class="carousel-item">
+							<p class="lead font-italic mx-4 mx-md-5">
+								We have some of the best specialty doctors from around the world,
+								they bring years of experience and offer evidence based treatment to ensure the best care for you.
+							</p>
+							<div class="mt-5 mb-4">
+								<img src="{% static 'images/team/test-thumb3.jpg' %}"
+									class="rounded-circle img-fluid shadow-1-strong" alt="smaple image" width="100"
+									height="100" />
+							</div>
+							<h4>Good Support!</h4>
+							<p class="text-muted mb-0">- Kolis Mullar</p>
+						</div>
+						
+						<div class="carousel-item">
+							<p class="lead font-italic mx-4 mx-md-5">
+								We have some of the best specialty doctors from around the world,
+								they bring years of experience and offer evidence based treatment to ensure the best care for you.
+							</p>
+							<div class="mt-5 mb-4">
+								<img src="{% static 'images/team/test-thumb4.jpg' %}"
+									class="rounded-circle img-fluid shadow-1-strong" alt="smaple image" width="100"
+									height="100" />
+							</div>
+							<h4>Nice Environment!</h4>
+							<p class="text-muted mb-0">- Partho Sarothi</p>
+						</div>
+
+						<div class="carousel-item">
+							<p class="lead font-italic mx-4 mx-md-5">
+								We have some of the best specialty doctors from around the world,
+								they bring years of experience and offer evidence based treatment to ensure the best care for you.
+							</p>
+							<div class="mt-5 mb-4">
+								<img src="{% static 'images/team/test-thumb1.jpg' %}"
+									class="rounded-circle img-fluid shadow-1-strong" alt="smaple image" width="100"
+									height="100" />
+							</div>
+							<h4>Modern Service!</h4>
+							<p class="text-muted mb-0">- Kolis Mullar</p>
+						</div>
+
+		</div>
+
+		<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+		  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+		  <span class="visually-hidden">Previous</span>
+		</button>
+		<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+		  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+		  <span class="visually-hidden">Next</span>
+		</button>
+	  </div>
+
+</section>
 
 
 
-	<!-- 
-    Essential Scripts
-    =====================================-->
+<section class="section clients">
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="col-lg-7">
+				<div class="section-title text-center">
+					<h2>Partners who support us</h2>
+					<div class="divider mx-auto my-4"></div>
+					<p>
+						Hospital Partners of India, Inc. owns and operates general acute care hospitals and surgical hospitals in partnership with physicians. 
+						The Company extends its services throughout the country.
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
 
 
-	<!-- Main jQuery -->
-	<!-- <script src="{% static 'plugins/jquery/jquery.js' %} plugins/jquery/jquery.js"></script> -->
-	<!-- Bootstrap 4.3.2 -->
-	<script src="{% static 'plugins/bootstrap/js/popper.js' %}"></script>
-	<script src="{% static 'plugins/bootstrap/js/bootstrap.min.js' %}"></script>
-	<script src="{% static 'plugins/counterup/jquery.easing.js' %}"></script>
-	<!-- Slick Slider -->
-	<script src="{% static 'plugins/slick-carousel/slick/slick.min.js' %}"></script>
-	<!-- Counterup -->
-	<script src=" {% static 'plugins/counterup/jquery.waypoints.min.js' %}"></script>
 
-	<script src=" {% static 'plugins/shuffle/shuffle.min.js' %}"></script>
-	<script src=" {% static 'plugins/counterup/jquery.counterup.min.js' %}"></script>
-	<!-- Google Map -->
-	<script src=" {% static 'plugins/google-map/map.js' %}"></script>
-	<script
-		src=" https://maps.googleapis.com/maps/api/js?key=AIzaSyAkeLMlsiwzp6b3Gnaxd86lvakimwGA6UA&callback=initMap"></script>
 
-	<script src=" {% static 'js/script.js' %}"></script>
-	<script src=" {% static 'js/contact.js' %}"></script>
 
-</body>
 
-</html>
+
+
+	<div class="container">
+		<div class="row clients-logo">
+			<div class="col-lg-2">
+				<div class="client-thumb">
+					<img src="{% static 'images/about/1.png' %}" alt="" class="img-fluid" />
+				</div>
+			</div>
+			<div class="col-lg-2">
+				<div class="client-thumb">
+					<img src="{% static 'images/about/2.png' %}" alt="" class="img-fluid" />
+				</div>
+			</div>
+			<div class="col-lg-2">
+				<div class="client-thumb">
+					<img src="{% static 'images/about/3.png' %}" alt="" class="img-fluid" />
+				</div>
+			</div>
+			<div class="col-lg-2">
+				<div class="client-thumb">
+					<img src="{% static 'images/about/4.png' %}" alt="" class="img-fluid" />
+				</div>
+			</div>
+			<div class="col-lg-2">
+				<div class="client-thumb">
+					<img src="{% static 'images/about/5.png' %}" alt="" class="img-fluid" />
+				</div>
+			</div>
+			<div class="col-lg-2">
+				<div class="client-thumb">
+					<img src="{% static 'images/about/6.png' %}" alt="" class="img-fluid" />
+				</div>
+			</div>
+			<div class="col-lg-2">
+				<div class="client-thumb">
+					<img src="{% static 'images/about/3.png' %}" alt="" class="img-fluid" />
+				</div>
+			</div>
+			<div class="col-lg-2">
+				<div class="client-thumb">
+					<img src="{% static 'images/about/4.png' %}" alt="" class="img-fluid" />
+				</div>
+			</div>
+			<div class="col-lg-2">
+				<div class="client-thumb">
+					<img src="{% static 'images/about/5.png' %}" alt="" class="img-fluid" />
+				</div>
+			</div>
+			<div class="col-lg-2">
+				<div class="client-thumb">
+					<img src="{% static 'images//about/6.png' %}" alt="" class="img-fluid" />
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+
+
+
+</section>
+
+{% endblock %}

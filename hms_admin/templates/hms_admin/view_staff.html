@@ -22,12 +22,15 @@
                         <table style="border-spacing: 30px;" class="table table-striped table-responsive">
                             <thead class="table-dark">
                                 <tr>
+                                    <th>Sl No</th>
+                                    <th> Photo </th>
+
                                     <th> Name </th>
                                     <th>Email ID</th>
                                     <th>Address</th>
                                     <th>Mobile Number</th>
-                                    <th>Password</th>
-                                    <th> Photo </th>
+                                   
+                                  
                                     <th width="10%"> Action</th>
                                 </tr>
                             </thead>
@@ -35,15 +38,15 @@
                             <tbody>
                                 
                                 <tr>
+                                    <td rowspan="2"> {{ forloop.counter }}</td>
+                                    <td rowspan="2"> <img src="{{staff.pic.url}}" alt="" height="50px" width="50px"></td>
+
                                     <td rowspan="2"> {{staff.name}}</td>
                                     <td rowspan="2">{{staff.mail}}</td>
                                     <td rowspan="2"> {{staff.address}}</td>
                                     <td rowspan="2"> {{staff.phone}}</td>
-                                    <td rowspan="2">{{staff.password}} </td>                                    
-                                    <td rowspan="2"> <img src="{{staff.pic.url}}" alt="" height="100px" width="100px"></td>
-                                    <td> 
-                                        <button type="button" class="btn btn-success">EDIT</button>                                                                             
-                                    </td>
+                                                              
+                                   
                                 </tr>
                                
                                 <tr>

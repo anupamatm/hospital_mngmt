@@ -1,4 +1,4 @@
-{% extends 'common/index.html' %}
+{% extends 'common/common_master.html' %}
 {% load static %}
 
 {% block header %}
@@ -85,11 +85,11 @@
                             <div class="col-md-6 mt-3" style="width:50%;">
                                 <label class="mb-3 mr-1" for="gender">Gender : </label>
 
-                                <input type="radio" class="btn-check" name="gender" id="male" autocomplete="off"
+                                <input type="radio" value="male" class="btn-check" name="gender" id="male" autocomplete="off"
                                     required>
                                 <label class="btn btn-sm btn-outline-secondary" for="male">Male</label>
 
-                                <input type="radio" class="btn-check" name="gender" id="female" autocomplete="off"
+                                <input type="radio" class="btn-check" value="female" name="gender" id="female" autocomplete="off"
                                     required>
                                 <label class="btn btn-sm btn-outline-secondary" for="female">Female</label>
 
