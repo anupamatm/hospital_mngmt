@@ -27,7 +27,7 @@
       <div class="login_box">
         <div class="left">
           <div class="top_link">
-            <a href="{% url 'common:index' %}">
+           
               <img
                 src="https://drive.google.com/u/0/uc?id=16U__U5dJdaTfNGobB_OpwAJ73vM50rPV&export=download"
                 alt=""
@@ -41,20 +41,14 @@
             <form method="POST">
             
               {% csrf_token %}
-              <h3>LOGIN</h3>
+              <h3>forgot password</h3>
 
-              <input type="text" required name="username" placeholder="USERNAME" />
-              <input type="password" required name = "password" placeholder="PASSWORD" />
-           
-              <button class="submit">LOGIN</button>
-              <p style="color: red;">   {{ error_msg }}</p>
-              <span id="span_reg">
-                New User ? <a href="{% url 'common:pat_register' %}"> Register </a>
-              </span>
-              <br>
-                <a href="{% url 'common:forgot_pass' %}?user={{user_type}} "> forgot password </a>
+              <input type="text" name="email" placeholder="email" />
              
-              
+           
+              <button class="submit">submit</button>
+              <p style="color: red;">   {{ error }}</p>
+             
             </form>
            
           </div>
@@ -76,20 +70,4 @@
     </section>
    
   </body>
-
-  <script>
-const queryString = window.location.search;
-
-const urlParams = new URLSearchParams(queryString);
-const userType = urlParams.get('user')
-
-console.log(userType)
-if(userType != 'patient'){
-  console.log('j')
-  document.getElementById('span_reg').style.display = 'none'
-  document.getElementById('span_forgot').style.display = 'block'
-
-}
-
-  </script>
 </html>

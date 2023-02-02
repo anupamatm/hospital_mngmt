@@ -83,7 +83,7 @@ WSGI_APPLICATION = 'hospital_mgt.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME' : 'hospital_db',
+        'NAME' : 'hms_db1',
         'USER' : 'postgres',
         'PASSWORD' : 'root',
         'HOST' : 'localhost',
@@ -146,8 +146,8 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST_USER = 'fidh367@gmail.com'
-EMAIL_HOST_PASSWORD = 'adlkmlfspjiapgmt'
+EMAIL_HOST_USER = 'aastroaurora@gmail.com'
+EMAIL_HOST_PASSWORD = 'scwcxkyhwkxtiext'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
