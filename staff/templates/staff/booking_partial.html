@@ -1,20 +1,57 @@
 {% if bookings %}
+<table class="table table-primary table-striped">
+    <tr>
+        <th>Sl No</th>
+        <th> Reference No</th>
+        <th>Patient Name</th>
+        <th> Doctor </th>
+        <th> Date </th>
+        <th> Time </th>
+        <th> Status </th>
 
+        <th> Action </th>
 
- 
-    {% for records in bookings %}
-    
-    <tr id="presc_tr">
-        <td> {{ forloop.counter }}</td>	
-        <td> {{ records.reference_no }} </td>
-        <td> {{ records.patient_name | title }} </td>		
-        <td> {{ records.doctor.doctor_name | title }} </td>
-        <td> {{ records.doctor.department.department | upper }} </td>
-        <td> {{ records.mobile }} </td>
-         
-        <td> <button type="button" class="btn btn-light"> Print </button>  </td>
     </tr>
+    {% for record in bookings %}
+    <tr>
+        <td>{{ forloop.counter }}</td>
+        <td>{{ record.reference_no }}</td>
+        <td> {{ record.patient_name | title }} </td>
+        <td> {{ record.doctor.doctor_name | title }} </td>
+        <td> {{ record.booking_date }} </td>
+        <td> {{ record.time }} </td>
+
+        <td> {{ record.status }}</td>
+        {% if record.status == 'booked' %}
+        <td> <a href="{% url 'patient:cancel_booking' record.id %}" class="btn btn-danger"> Cancel </a> </td>
+
+
+        {% endif %}
+
+        {% if record.status == 'completed' %}
+        <td>       
+        
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" 
+            data-bs-target="#exampleModal" value="{{ record.id}}" onclick="get_pre(this.value)">
+            Prescription1
+              </button>
+
+        </td>
+
+           
+       {% endif %}
+
+
+    </tr>
+
     {% endfor %}
- 
+
+
+
+</table>
+
+{% else %}
+
+<h2> No Records Found</h2>
 
 {% endif %}

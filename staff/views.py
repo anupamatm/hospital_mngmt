@@ -58,21 +58,21 @@ def patient_search(request):
     return render(request,'staff/patient_search.html',{'patient':patient})
    
 def booking_list(request):
-    bookings = Booking.objects.filter(Q(status = 'booked') | Q(status = 'completed'))
+    bookings = Booking.objects.all()
      
     if request.method == 'POST':
         reference_no = request.POST['reference_no']
 
         search_result = Booking.objects.filter(reference_no__icontains = reference_no)
-        print(search_result,'lll')
-        html = render_to_string(
-            template_name="staff/booking_partial.html", 
-            context={"bookings": search_result}
-        )
+        # print(search_result,'lll')
+        # html = render_to_string(
+        #     template_name="staff/booking_partial.html", 
+        #     context={"bookings": search_result}
+        # )
 
-        data_dict = {"result": html}
+        # data_dict = {"result": html}
 
-        return JsonResponse(data=data_dict, safe=False)
+        # return JsonResponse(data=data_dict, safe=False)
 
     
     return render(request,'staff/bookings.html',{'bookings':bookings})

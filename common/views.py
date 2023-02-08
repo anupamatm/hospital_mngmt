@@ -155,9 +155,8 @@ def forgot_pass(request):
     if request.method=='POST':
         email=request.POST['email']
         
-        if user_type=='doctor':
-             user = Doctor.objects.filter(doctor_email= email)    
-            
+        if user_type=='doc':
+             user = Doctor.objects.filter(doctor_email= email)               
             
         if user_type=='patient':
             user = Patient.objects.filter(email=email)
@@ -194,7 +193,7 @@ def reset_pass(request):
     if request.method=='POST':
         password=request.POST['password']
 
-        if user_type=='doctor':
+        if user_type=='doc':
             user = Doctor.objects.get(id=id)     
             
         if user_type=='patient':
